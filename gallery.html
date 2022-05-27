@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+<!--------------------------------------------------------->
+ <!--------------------------------------------------------------------------------------->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<!-------------------------------->
+  <link rel="stylesheet" href="mystyles.css">
+  <link href="images/wlogo.jpg" rel="icon">
+  
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+    <!-------------------------------->
+  
+    <style>
+       body {
+        background-color: rgb(238, 234, 227);
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.row1 > .column1 {
+  padding: 20px 10px;
+}
+
+.row1:after {
+  content: "";
+  display: table;
+  clear: both;
+  
+}
+.row1{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.column1 {
+  float: left;
+  width: 25%;
+  
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #dfe3eb;
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 60%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+img {
+  margin-bottom: -4px;
+}
+
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 600px) {
+  .modal-content{
+    margin: 0px;
+    width: 100%;
+  }
+  
+ .row1{
+  display: inline-grid;
+  padding: 0px;
+ }
+
+ .column1 {
+    width: 100%;
+}
+.row1 > .column1 {
+    /* padding: 20px 10px; */
+    padding: 5px 0px;
+}
+}
+        </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+            <a href="index.html">
+              <img class="amlogo" src="images/fflf.png" style="width: 100px; height: 75px; margin: 10px 0px 0px 30px;" alt="" > </a>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul  style="vertical-align: middle;" class="nav navbar-nav navbar-right" id="ulnav">
+              <li><a href="index.html">HOME</a></li>
+              <li><a href="About.html">ABOUT US</a></li>
+              <li><a href="publication.html">PUBLICATIONS</a></li>
+              <li><a href="projects.html">PROJECTS</a></li>
+              <li><a href="Alumini.html">ALUMNI</a></li>
+              <li class="active"><a href="Alumini.html">GALLERY</a></li>
+              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Be a Member
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  
+                  <li><a href="https://forms.gle/vp9MraqhP3oqwXdQ6">Register</a></li>
+                  
+                </ul>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <h2 style="color: blueviolet; text-align: center; margin-top:100px; font-weight: 800; font-size: 50px;">GALLERY</h2>
+      <div class="row1">
+        <div class="column1">
+          <img src="gimg/1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/9.jpg" style="width:100%" onclick="openModal();currentSlide(9)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/10.jpg" style="width:100%" onclick="openModal();currentSlide(10)" class="hover-shadow cursor">
+        </div>
+        
+        <div class="column1">
+          <img src="gimg/22.jpg" style="width:100%" onclick="openModal();currentSlide(22)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/23.jpg" style="width:100%" onclick="openModal();currentSlide(23)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/24.jpg" style="width:100%" onclick="openModal();currentSlide(24)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/25.jpg" style="width:100%" onclick="openModal();currentSlide(25)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/26.jpg" style="width:100%" onclick="openModal();currentSlide(26)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/27.jpg" style="width:100%" onclick="openModal();currentSlide(27)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="gimg/28.jpg" style="width:100%" onclick="openModal();currentSlide(28)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="images/hariom mohit.jpeg" style="width:100%" onclick="openModal();currentSlide(27)" class="hover-shadow cursor">
+        </div>
+        <div class="column1">
+          <img src="images/mohit aadi.jpeg" style="width:100%" onclick="openModal();currentSlide(27)" class="hover-shadow cursor">
+        </div>
+      </div>
+      
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+      
+          <div class="mySlides">
+            <div class="numbertext">1 / 20</div>
+            <img src="gimg/1.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">2 / 20</div>
+            <img src="gimg/2.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">3 / 20</div>
+            <img src="gimg/3.jpg" style="width:100%">
+          </div>
+          
+          <div class="mySlides">
+            <div class="numbertext">4 / 20</div>
+            <img src="gimg/4.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">5 / 20</div>
+            <img src="gimg/5.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">6 / 20</div>
+            <img src="gimg/6.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">7 / 20</div>
+            <img src="gimg/7.jpg" style="width:100%">
+          </div>
+          
+          <div class="mySlides">
+            <div class="numbertext">8 / 20</div>
+            <img src="gimg/8.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">9 / 20</div>
+            <img src="gimg/9.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">10 / 20</div>
+            <img src="gimg/10.jpg" style="width:100%">
+          </div>
+      
+         
+          
+          <div class="mySlides">
+            <div class="numbertext">12 / 20</div>
+            <img src="gimg/22.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">13 / 20</div>
+            <img src="gimg/23.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">14 / 20</div>
+            <img src="gimg/24.jpg" style="width:100%">
+          </div>
+      
+          <div class="mySlides">
+            <div class="numbertext">15 / 20</div>
+            <img src="gimg/25.jpg" style="width:100%">
+          </div>
+          
+          <div class="mySlides">
+            <div class="numbertext">16 / 20</div>
+            <img src="gimg/26.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">17 / 20</div>
+            <img src="gimg/27.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">18 / 20</div>
+            <img src="gimg/28.jpg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">19 / 20</div>
+            <img src="images/hariom mohit.jpeg" style="width:100%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">20 / 20</div>
+            <img src="images/mohit aadi.jpeg" style="width:100%">
+          </div>
+          
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      
+          
+        </div>
+      </div>
+      
+      <script>
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+      }
+      
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+      
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
+    
+
+      <!------------FOOTER STARTS--------------->
+
+<footer class="mainfooter" role="contentinfo">
+    <div class="footer-middle">
+    <div class="footercontainer">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <!--Column1-->
+          <div class="footer-pad">
+            <h4 class="footerh4">USEFUL LINKS</h4>
+            <ul class="list-unstyled">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="About.html">About</a></li>
+              <li><a href="projects.html">Projects</a></li>
+              
+              <li><a href="Alumini.html"> Alumni</a></li>
+              <li><a href="gallery.html"> Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <!--Column1-->
+          <div class="footer-pad">
+            <h4 class="footerh4"></h4>
+            <ul class="list-unstyled">
+              <li><a href="projects.html"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <!--Column1-->
+          <div class="footer-pad">
+            <h4 class="footerh4">CONTACT</h4>
+            <ul class="list-unstyled">
+              <li>Email:- iotclub21@gmail.com<br> Phone No:  +91 9193129522 <br>Address:- DayalBagh ,Agra (Uttar Pradesh)<br>India</li>
+              <li></li>
+              <li></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li>
+                <a href="#"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h4 class="footerh4">Follow Us</h4>
+              <ul class="social-network social-circle">
+               <li><a href="https://www.facebook.com/iotclub21/" target="blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+               <li><a href="https://instagram.com/iotclub21?utm_medium=copy_link" target="blank" class="icoFacebook" title="Facebook"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="#" target="blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+               <li><a href="https://twitter.com/IOTCLUB1" target="blank" class="icoLinkedin" title="Linkedin"><i class="fa fa-twitter"></i></a></li>
+              </ul>				
+      </div>
+      </div>
+    <div class="row">
+      <div class="col-md-12 copy">
+        <p class="text-center">&copy; Copyright 2021 - IOT-CLUB.  All rights reserved.</p>
+      </div>
+    </div>
+  
+  
+    </div>
+    </div>
+  </footer>
+
+
+      <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        captionText.innerHTML = dots[slideIndex-1].alt;
+      }
+      </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+.agri-content{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+color: black;
+text-align:justify;
+font-family: arial;
+background-color: rgb(236, 229, 243);
+margin: 50px 50px 50px 50px;
+padding:30px 40px 30px 40px ;
+
+}
+@media (max-width: 600px) {
+    .ag-banner{
+width: 320px;
+height: 180px;
+
+    }
+  }
+  @media (min-width: 600px) {
+    .ag-banner{
+        width:1335px;
+        height: 400px;
+    }
+  
+  }
+  .tof{
+      margin-top: 110px;
+    color: rgb(9, 11, 100); 
+    font-size: 30px;
+    text-align: center;
+  }
+.names{
+    text-align: center;
+    font-size: 40px; 
+    font-weight: 600;
+}
+@media (max-width: 600px) {
+    .names{
+        
+        font-size: 20px; 
+        font-weight: 600;
+    }
+    .tof{
+        margin-top: 110px;
+      color: rgb(9, 11, 100); 
+      font-size: 20px;
+      text-align: center;
+    }
+    .agri-content{
+        margin: 10px 10px 10px 10px;
+        padding: 10px 10px 10px 10px;
+    }
+    .imghealth{
+        width: 335px;
+        height: 180px;
+    }
+    
+  }
+  
+  
